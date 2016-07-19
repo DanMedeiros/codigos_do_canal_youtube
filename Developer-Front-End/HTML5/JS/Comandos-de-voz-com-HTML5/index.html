@@ -22,7 +22,7 @@
          </div>
          <!-- LINHA SEPARADORA-->
          <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                <div class="panel panel-default">
                   <div class="panel-heading">
                      <h1>Comandos de voz com HTML5</h1>
@@ -33,10 +33,15 @@
                            <form action="">
                               <div class="form-group">
                                  <label for="meu_campo">RECEBER AUDIO</label>
-                                 <input type="text" class="form-control" id='meu_campo' placeholder="Receber o seu audio">
                               </div>
+
+                              <div class="form-group">
+                                <textarea class="form-control" rows="3" id="campo_texto"></textarea>
+                              </div>
+
+
                            </form>
-                           <button class="btn btn-primary btn-lg pull-right" id="btn_gravar_audio">Gravar Audio</button>
+                           <button class="btn btn-success btn-lg pull-right" id="btn_gravar_audio">Gravar Audio</button>
                         </div>
                         <div class="row" style="height:10px">
                            <div id="" class="col-xs-12">
@@ -45,7 +50,8 @@
                         </div>
                         <!-- LINHA SEPARADORA-->
                         <div class="col-md-12">
-                           <small class="pull-right">Códigos & Café - Agência Digital e Teninamentos Web</small>
+                        <img src="../../../../assets/images/logo-01.png" alt="Códigos & Café - Agência Digital e Teninamentos Web" class="img-responsive pull-right" >
+                
                         </div>
                      </div>
                      <!-- /.row final linha -->
@@ -55,42 +61,13 @@
          </div>
          <!-- /.row final linha -->
       </div>
+
+
+<script type="text/javascript">
+   
+   
+</script>
       
-      <script type="text/javascript">
-         // Fazemos que o código só funcione apos o carregamento completo da pagina
-         window.addEventListener('DOMContentLoaded', function(){
-           // Instanciamos o nosso botão
-           var btn_gravacao = document.querySelector('#btn_gravar_audio');
-           // Verificamos se o navegador tem suporte ao Speech API
-           if(window.SpeechRecognition || window.webkitSpeechRecognition){
-             // Como não sabemos qual biblioteca usada pelo navegador 
-             // Atribuimos a api retornada pelo navegador
-             var captura_audio = window.SpeechRecognition || window.webkitSpeechRecognition;
-             // Criamos um novo objeto com a API Speech
-             var recebe_audio = new captura_audio();
-             // Atribuimos a função de clique ao botão e iniciamos a gravação
-             btn_gravacao.addEventListener('click', function(e){
-                recebe_audio.start();
-             }, false);
-             // Trabalhamos com o resultado retornado da gravação
-             recebe_audio.addEventListener('result', function(e){
-               console.log(e);
-               // Pegamos o resultado transcrito pela API
-               var resultado = e.results[0][0].transcript;
-               console.log(resultado);
-               // Enviamos para nosso input
-               document.getElementById('meu_campo').value = resultado;
-         
-               //window.location.href = 'http://'+resultado;
-         
-             }, false);
-           }else{
-             // Caso não o navegador não apresente suporte ao Speech API apresentamos a seguinte mensagem
-             alert('Este navegador não apresenta suporte para essa funcionalidade ainda');
-           }
-         }, false);      
-         
-      </script>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
