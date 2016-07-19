@@ -9,12 +9,12 @@
 
       	 // Garanto que o script só rode após o carregamento completo da página
          document.addEventListener('DOMContentLoaded', function(){
-            // Verifico se o objeto naoPrimeiraVisita está armazenado no localStorage do navegado
-           if (!localStorage.naoPrimeiraVisita) {
+            // Verifico se o objeto primeiraVisita está armazenado no localStorage do navegado
+           if (!localStorage.primeiraVisita) {
            		// Caso não esteja eu imprimo no console a mensagem "Primeiro acesso!"
                console.log('Primeiro acesso!');
-               // Em seguida armazeno no localStorage o objeto naoPrimeiraVisita com o valor 1
-               localStorage.naoPrimeiraVisita= "1"; 
+               // Em seguida armazeno no localStorage o objeto primeiraVisita com o valor 1
+               localStorage.primeiraVisita= "1"; 
            }else{
            	   // Caso exista o objeto imprimo no console a mensagem 'Não é o primeiro acesso!'
                console.log('Não é o primeiro acesso!');
