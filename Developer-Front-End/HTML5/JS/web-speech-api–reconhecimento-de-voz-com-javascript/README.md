@@ -1,4 +1,4 @@
-# Transcrição de voz com HTML5 - Dicas de Programação #2
+# Web Speech API – Reconhecimento de voz com JavaScript - Dicas de Programação #2
 
 Este material foi criado para o video com assunto relacionado com o tema
 
