@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', function(){
         // Dou um retun para sair da função
         return;
       }
-      // Caso não esteja capturando o audio iniciao transcrição
+      // Caso não esteja capturando o audio inicio a transcrição
       recebe_audio.start();
     }, false);
 
