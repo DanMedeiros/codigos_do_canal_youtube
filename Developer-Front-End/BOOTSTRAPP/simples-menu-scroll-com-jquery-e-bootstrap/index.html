@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIMPLES MENU SCROLL COM BOOTSTRAP E JQUERY</title>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,200' rel='stylesheet' type='text/css'>    
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+
+
+
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top" >
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Troca a navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+             <img src="../../../../assets/images/Logo-codigos-e-cafe.png" alt="Códigos & Café - Agência Digital e Teninamentos Web" style="height: 50px; margin-top: -15px;" class="img-responsive pull-right" >
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Página inicial</a></li>
+            <li><a href="#about">Tutoriais</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2>SIMPLES MENU SCROLL COM BOOTSTRAP E JQUERY</h2>
+        <p>Este é um exemplo simples de como fazer um menu escroll com bootstrap e jquery.</p>
+        <p>Lembre-se de se inscrever em meu canal para receber as atualizações de videos.</p>
+       
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+           <p>
+             <img src="../../../../assets/images/Logo-codigos-e-cafe.png" alt="Códigos & Café - Agência Digital e Teninamentos Web" class="img-responsive pull-right" >
+          
+            </p>
+        </div>  
+      </div><!-- /.row final linha -->
+      
+      <div class="row">
+      <!-- Adcionei um height de 1000px para conseguirmos visualizar o efeito de scroll -->
+
+        <div class="col-md-12" style="height: 1000px;">
+           
+        </div>  
+      </div><!-- /.row final linha -->
+
+    </div> <!-- /container -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- SCRIPTS JS CARREGADOS  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+  jQuery(document).ready(function($) {
+    // Variavel de controle para indentificar se apliquei o efeito
+    var controleNav = false;
+    // Capturo o evento de rolagem da pagina
+    $(document).scroll(function(e) {
+        // Adiciono o valor de movimento do topo da pagina na variavel
+        var scrollTop = $(document).scrollTop();
+        // verivico se a movimentação do scroll é maior que o tamanho do height do meu menu
+        if (scrollTop > $('.navbar').height()) {
+            // verifico se já foi aplicado o efeito para fixiar o menu
+            if (controleNav == false) {
+                // removo a classe navbar-static-top e adciono a classe navbar-fixed-top
+                // tornando o menu fixo no topo do nosso site
+                $('.navbar').removeClass('navbar-static-top').addClass('navbar-fixed-top');
+                // torno nosso menu invisivel para aplicação do efeito de fade
+                $('.navbar').hide();
+                // aplico o efeito de fadeIn em nosso menu
+                $('.navbar').fadeIn('slow');
+                // digo para a variavel de controle que o efeito foi aplicado
+                controleNav = true;
+            }
+        } else {
+            // Ao retornar o ao topo do site verifico se o efeito foi aplicado
+            if (controleNav == true) {
+                // caso o efeito tenha sido aplicado removo a classe navbar-fixed-top 
+                // e retorno a classe navbar-static-top tornando o menu estatico novamente
+                $('.navbar').removeClass('navbar-fixed-top').addClass('navbar-static-top');
+                // Digo para a variavel controleNav que o efeito não esta mais aplicado
+                controleNav = false;
+            }
+        }
+    });
+});
+  </script>
+
+</body>
+</html>
