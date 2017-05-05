@@ -119,43 +119,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-      <script>
-      // Garanto que o scritp só rode após o carregamento do DOM
-      jQuery(document).ready(function($) {
-          // Crio uma função para ser usada com jquery
-         $.fn.prllx = function(config){
-              // Atribuo as propriedades da janela a uma variável
-            var $win = $(window);
-            // Através do método extend atribuo os valores padrão para 
-            // ser usada na minha função
-            var conf = $.extend({ veloc: 6, exib: '50%'}, config);
-            // Utilizo o o return para atribuir os valores da ação ao objeto
-            // utilizo o método each() para alterar todos os elementos
-            // que receberam o identificador
-            return this.each(function() {
-               // instancio o elemento da vez a uma variável
-               var $element = $(this);
-                // defino que o background deve ser fixo
-               $element.css({'background-attachment': 'fixed'});
-               // Através do método scroll inicio as alteração na posição da imagem
-               $(window).scroll(function(event) {
-                  // inicio o calculo em relação ao posicionamento vertical
-                  var $posY = -($win.scrollTop() / conf.veloc);
-                  // crio o valor que sera passado para a propriedade background-position
-                  var $repositon = conf.exib +' '+ $posY +'px';
-                  // Atribuo o novo valor para o posicionamento da minha imagem
-                  $element.css({'background-position': $repositon});
-               });
-            });
-
-         }
-          // atribuo ao elemento a minha função
-          $('.prllx').prllx();
-      });
-
-     
-
-      </script>
+      
 
 
    </body>
